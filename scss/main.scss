@@ -3,7 +3,9 @@
 * Imports
 *
 **/
-
+body {
+ background: white;
+}
 // Utils
 @import "utils/variables";
 @import "utils/functions";
@@ -11,10 +13,8 @@
 
 // Base Rules
 @import "base/reset";
-@import "base/normalize";
 @import "base/global";
 @import "base/typography";
-@import "base/links";
 @import "base/webform";
 
 //  Layout Rules
