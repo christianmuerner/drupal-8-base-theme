@@ -23,7 +23,11 @@
     "Responsive",
     "Images"
   ],
-  "author": "Christian Mürner",
+  "author": {
+    "name": "Christian Mürner ",
+    "email": "hallo@web3dynamit.com",
+    "url": "https://www.web3dynamit.com/"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/christianmuerner/drupal-8-base-theme/issues"
@@ -37,6 +41,7 @@
     "gulp-imagemin": "^2.4.0",
     "gulp-jshint": "^2.0.0",
     "gulp-load-plugins": "^1.1.0",
+    "gulp-lodash": "^0.1.2",
     "gulp-notify": "^2.2.0",
     "gulp-sass": "^2.1.1",
     "gulp-shell": "^0.5.1",
