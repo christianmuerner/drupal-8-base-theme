@@ -107,9 +107,12 @@ gulp.task('drush', function() {
   return gulp.src('', {
       read: false
     })
+    // Drush command [0]:Cancel [1]:drush [2]:theme-registry [3]:menu [4]:css-js [5]:module-list [6]:theme-list [7]:render [8]:views
     .pipe($.shell([
-      'drush cc css-js',
+      'drush cache-clear css-js',
     ]))
+    // Show errors
+    .on('error', reportError)
     .pipe($.notify({
       title: "Caches cleared",
       message: "Drupal CSS/JS caches cleared.",
@@ -124,6 +127,7 @@ gulp.task('browser-sync', function() {
     'styles/main.css',
     'scripts/**/*.js',
     'images/**/*',
+    // ToDo: find a caching solution
     'templates/**/*.twig'
   ];
   //initialize browsersync
