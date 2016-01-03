@@ -136,48 +136,6 @@ gulp.task('browser-sync', function() {
   });
 });
 
-// Styleguide Generator with SC5: https://github.com/SC5/sc5-styleguide
-gulp.task('styleguide:generate', function() {
-  return gulp.src('scss/**/*.scss')
-    .pipe(styleguide.generate({
-        title: 'Monoset Styleguide',
-        overviewPath: 'README.md',
-        server: true,
-        port: 3010,
-        // customColors: '/scss/utils/_styleguide_custom_variables.scss',
-        // For static style guide. Generat relative to your environment:
-        // appRoot: '/themes/monoset/styleguide',
-        extraHead: [
-          '<link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900">',
-        ],
-        rootPath: outputPath,
-        disableEncapsulation: true,
-        // disableHtml5Mode: true
-      }))
-    .pipe(gulp.dest(outputPath));
-});
-
-gulp.task('styleguide:applystyles', function() {
-  return gulp.src('styleguide/main.scss')
-    .pipe(sass({
-      errLogToConsole: true
-    }))
-    .pipe(styleguide.applyStyles())
-    .pipe(gulp.dest(outputPath));
-});
-
-/* good opportunity and interesting method to generate StyleGuide may if there is nothing other to do */
-// Style guide generator incorporated into default gulp task (Experimental).
-// Uncomment and replace the current task bellow if you need a style guide generated when you run 'gulp'.
-// Style guide will be served on port: 3010.
-//gulp.task('styleguide', ['styleguide:generate', 'styleguide:applystyles']);
-
-// Default tasks with styleguide.
-//gulp.task('default', ['sass', 'browser-sync', 'styleguide'], function() {
-//  gulp.watch("scss/**/*.scss", ['sass', 'styleguide']);
-//  gulp.watch("scripts/**/*.js", ['js']);
-//});
-
 // Default task to be run with `gulp`
 gulp.task('default', ['sass', 'browser-sync'], function() {
   gulp.watch("scss/**/*.scss", ['sass']);
