@@ -166,17 +166,17 @@ gulp.task('styleguide:applystyles', function() {
     .pipe(gulp.dest(outputPath));
 });
 
+/* good opportunity and interesting method to generate StyleGuide may if there is nothing other to do */
 // Style guide generator incorporated into default gulp task (Experimental).
 // Uncomment and replace the current task bellow if you need a style guide generated when you run 'gulp'.
 // Style guide will be served on port: 3010.
-
-// gulp.task('styleguide', ['styleguide:generate', 'styleguide:applystyles']);
+//gulp.task('styleguide', ['styleguide:generate', 'styleguide:applystyles']);
 
 // Default tasks with styleguide.
-// gulp.task('default', ['sass', 'browser-sync', 'styleguide'], function() {
-// gulp.watch("scss/**/*.scss", ['sass', 'styleguide']);
-// gulp.watch("scripts/**/*.js", ['js']);
-// });
+//gulp.task('default', ['sass', 'browser-sync', 'styleguide'], function() {
+//  gulp.watch("scss/**/*.scss", ['sass', 'styleguide']);
+//  gulp.watch("scripts/**/*.js", ['js']);
+//});
 
 // Default task to be run with `gulp`
 gulp.task('default', ['sass', 'browser-sync'], function() {
