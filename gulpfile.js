@@ -35,7 +35,7 @@ gulp.task('sass', function() {
     // Write sourcemaps
     .pipe($.sourcemaps.write())
     // Save css
-    .pipe(gulp.dest('styles'))
+    .pipe(gulp.dest('css'))
     .pipe(browserSync.reload({
       stream: true
     }));
@@ -124,7 +124,7 @@ gulp.task('drush', function() {
 gulp.task('browser-sync', function() {
   //watch files
   var files = [
-    'styles/main.css',
+    'css/style.css',
     'scripts/**/*.js',
     'images/**/*',
     // ToDo: find a caching solution
